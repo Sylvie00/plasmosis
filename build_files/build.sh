@@ -2,8 +2,7 @@
 
 set -ouex pipefail
 
-dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-dnf install -y steam tailscale 
+dnf5 install -y sddm
 
 cat > /usr/share/ublue-os/image-info.json <<EOF
 {
@@ -20,5 +19,3 @@ cat > /usr/share/ublue-os/image-info.json <<EOF
 EOF
 
 systemctl enable podman.socket
-systemctl disable plasmalogin.service
-systemctl enable sddm.service

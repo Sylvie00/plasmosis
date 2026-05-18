@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-# thanks to skullbite's Kionite7 the majority of this script
+# thanks to skullbite's Kionite7 some bits and pieces of this script
 
 cd /tmp
 git clone --depth 1 https://github.com/mrbvrz/segoe-ui-linux /tmp/segoe
@@ -37,12 +37,7 @@ rm /usr/share/wayland-sessions/plasma.desktop
 sed -i "s/#Current=01-breeze-fedora/Current=sddm-theme-mod/g" /etc/sddm.conf
 sed -i "s/#CursorTheme=/CursorTheme=aero-drop/g" /etc/sddm.conf
 
-# atp provides its own distro info so overwrite
-cp /ctx/sys/etc/xdg/kcm-about-distrorc /etc/xdg/kcm-about-distrorc
-# (
-#     echo "[Theme]" 
-#     echo "Current=sddm-theme-mod"
-#     echo "CursorTheme=aero-drop"
-# ) >> /etc/plasmaconfig.conf
-
 dnf autoremove -y
+
+systemctl disable plasmalogin.service
+systemctl enable sddm.service
