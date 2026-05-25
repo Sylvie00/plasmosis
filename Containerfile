@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/zirconium-dev/zirconium:latest
+FROM ghcr.io/zirconium-dev/zirconium-hawaii-jackrabbit
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
