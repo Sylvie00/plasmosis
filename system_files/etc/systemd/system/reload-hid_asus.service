@@ -1,0 +1,12 @@
+[Unit]
+Description=Reload hid_asus with correct options
+After=multi-user.target
+ConditionKernelModule=hid_asus
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/modprobe -r hid_asus
+ExecStart=/usr/bin/modprobe hid_asus
+
+[Install]
+WantedBy=multi-user.target
