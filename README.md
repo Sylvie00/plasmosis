@@ -1,1 +1,1 @@
-dont use this yet
+personal zirconium-hawaii-jackrabbit image with a few fixes for the 2025 ROG Flow Z13
