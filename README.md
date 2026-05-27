@@ -1,1 +1,1 @@
-personal zirconium-hawaii-jackrabbit image with a few fixes for the 2025 ROG Flow Z13
+personal zirconium-hawaii-jackrabbit image with a few fixes for the 2025 ROG Flow Z13.
